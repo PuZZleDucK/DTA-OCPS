@@ -44,7 +44,7 @@
 
 # submission requirements
 - [x] github repository
-- [ ] link to repository: https://github.com/PuZZleDucK/DTA-OCPS
+- [ ] link to repository: git@github.com:PuZZleDucK/DTA-OCPS.git
 - [ ] link to deploy:
 
 # Path to Solution
