@@ -12,9 +12,10 @@
 
 
 <% @order.order_lines.each do |line| %>
-  <p>line <%= link_to line.id, line %> - q <%= line.quantity %> - i <%= link_to line.item.id, line.item %> - $ <%= line.item.unit_price %></p>
+  <p>line <%= link_to line.id, line %> - q <%= line.quantity %> - i <%= link_to line.item.id, line.item %> - $ <%= line.item.unit_price %> - line-total <%= calc_line_total line %></p>
 <% end %>
 
+<p>Order total: <%= calc_order_total @order %></p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

@@ -1,5 +1,8 @@
 <h1><%= @user.name %></h1>
 
+<%= link_to "new order", new_order_url %>
+
+
 <p>Orders</p>
 
 <% @user.orders.each do |order| %>

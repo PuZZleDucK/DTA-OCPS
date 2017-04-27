@@ -60,7 +60,7 @@ Block - Goal
 - [ ] Ensure basic functionality of adding multiple items and displaying price
 - [ ] use dynamic json API or static data
 
-# Technology decisions
+# Decisions / Assumptions
 The limited time for decision making and implementation are my biggest considerations here. I have chosen to develop a Rails based solution as the majority of my recent work with online solutions has been in Rails
 
 I want to hit a working MVP asap, but I think setting up the deployment pipeline and refining the plan are worthwhile delays atm
