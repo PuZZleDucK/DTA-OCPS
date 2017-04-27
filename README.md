@@ -45,15 +45,15 @@
 # submission requirements
 - [x] github repository
 - [ ] link to repository: git@github.com:PuZZleDucK/DTA-OCPS.git
-- [ ] link to deploy:
+- [ ] link to deploy: https://ocps.herokuapp.com/
 
 # Path to Solution
 The most critical constraint seems to be the 4hr limit, I'm breaking that up into 8 half hour blocks with a plan to document and review progress every few blocks
 
 Block - Goal
 - [x] Plan and approach and implement hello world deployment
-- [ ] Implement deployment pipeline
-- [ ] Implement basic User entities
+- [x] Implement deployment pipeline
+- [x] Implement basic User entities
 - [ ] Implement Items, Orders, Rows - static data
 - [ ] Implement relations - need order line/qty
 - [ ] basic functionality - messy... rewrite? yes!
