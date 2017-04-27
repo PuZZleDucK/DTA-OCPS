@@ -1,3 +1,7 @@
 <h1><%= @user.name %></h1>
 
 <p>Orders go here</p>
+
+<% for @user.orders |order| %>
+<p>Order: <%= order.id %></p>
+<% end %>
