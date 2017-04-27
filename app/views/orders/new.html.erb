@@ -1,15 +1,21 @@
 <h1>New Order</h1>
 
+<h5>Select the quantity of each item you would like to add:</h5>
+
 <%= form_for @order, url: {action: "create"} do |f| %>
   <%= f.hidden_field(:user_id, :value => params[:user_id]) %>
   <%= f.hidden_field(:status, :value => params[:status]) %>
   <% @items.each do |item| %>
     <% item_sym = "#{item.id}qty".to_sym %>
-    <p><%= item.name %> <%= f.number_field(item_sym, :value => params[item_sym]) %></p>
+
+    <% if item.special_qty.nil? then %>
+      <li><%= f.number_field(item_sym, :value => params[item_sym]) %> x <%= link_to "Item-#{item.name}", item %> ($<%= item.unit_price %>.00ea)</li>
+    <% else %>
+      <li><%= f.number_field(item_sym, :value => params[item_sym]) %> x <%= link_to "Item-#{item.name}", item %> ($<%= item.unit_price %>.00ea / $<%= item.special_price %>.00 for <%=item.special_qty %>)</li>
+    <% end %>
+
   <% end %>
   <%= f.submit "Order" %>
 <% end %>
-
-
-
-<%= link_to 'Back', orders_path %>
+<br />
+<%= link_to 'Home', root_path %>

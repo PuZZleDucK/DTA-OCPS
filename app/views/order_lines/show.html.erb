@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Order line <%= @order_line.id %></h1>
 <p>
   <strong>Item:</strong>
-  <%= @order_line.item %>
+  <%= link_to @order_line.item.name, @order_line.item %>
 </p>
 
 <p>
@@ -12,8 +13,7 @@
 
 <p>
   <strong>Order:</strong>
-  <%= @order_line.order %>
+  <%= link_to @order_line.order.id, @order_line.order %>
 </p>
 
-<%= link_to 'Edit', edit_order_line_path(@order_line) %> |
-<%= link_to 'Back', order_lines_path %>
+<%= link_to 'Home', root_path %>

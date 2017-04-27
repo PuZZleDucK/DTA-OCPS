@@ -1,10 +1,12 @@
-<h1>OCPS</h1>
-<%= link_to "The Online Checkout Pricing System", root_path %>
+<%= link_to "OCPS", root_path %>
+<h1>The Online Checkout Pricing System</h1>
 
-<h3>Users:</h3>
+<h3>Current System Users(order count):</h3>
+<ul>
 <% @users.each do |user| %>
-  <p><%= link_to user.name, user %></p>
+  <li><%= link_to "#{user.name} (#{user.orders.length})", user %></li>
 <% end %>
+</ul>
 
 <h3>New User:</h3>
-<%= link_to "Create Account", new_path %>
+<%= link_to "Create a new user account", new_path %>

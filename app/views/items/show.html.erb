@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Item <%= @item.id %> information</h1>
 <p>
   <strong>Name:</strong>
-  <%= @item.name %>
+  Item-<%= @item.name %>
 </p>
 
 <p>
   <strong>Unit price:</strong>
-  <%= @item.unit_price %>
+  $<%= @item.unit_price %>.00
 </p>
 
 <p>
@@ -17,8 +18,7 @@
 
 <p>
   <strong>Special price:</strong>
-  <%= @item.special_price %>
+  $<%= @item.special_price %>.00
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Home', root_path %>
