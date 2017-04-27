@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @items = Item.all
   end
 
   # GET /orders/1/edit
@@ -24,7 +25,21 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    @order = Order.new({"user_id" => order_params[:user_id], "status" => order_params[:status]})
+    puts "ORDER: #{@order}"
+
+    order_params.each do |param|
+      puts "   p: #{param}"
+    end
+
+    Item.all.each do |item|
+      item_param_sym = "#{item.id}qty".to_sym
+      puts "   i: #{item.id}qty  -->  #{order_params[item_param_sym]}"
+      if order_params[item_param_sym].to_i > 0 then
+        OrderLine.create(quantity: order_params[item_param_sym], order: @order, item: item)
+        puts "   CREATED ORDER LINE"
+      end
+    end
 
     respond_to do |format|
       if @order.save
@@ -69,6 +84,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:status, :user_id)
+      params.require(:order).permit!
     end
 end

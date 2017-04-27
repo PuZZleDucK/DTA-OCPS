@@ -1,6 +1,6 @@
 <h1><%= @user.name %></h1>
 
-<%= link_to "new order", new_order_url %>
+<%= link_to "new order", new_order_url(:user_id => @user.id, :status => 0) %>
 
 
 <p>Orders</p>
