@@ -26,18 +26,11 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new({"user_id" => order_params[:user_id], "status" => order_params[:status]})
-    puts "ORDER: #{@order}"
-
-    order_params.each do |param|
-      puts "   p: #{param}"
-    end
 
     Item.all.each do |item|
       item_param_sym = "#{item.id}qty".to_sym
-      puts "   i: #{item.id}qty  -->  #{order_params[item_param_sym]}"
       if order_params[item_param_sym].to_i > 0 then
         OrderLine.create(quantity: order_params[item_param_sym], order: @order, item: item)
-        puts "   CREATED ORDER LINE"
       end
     end
 

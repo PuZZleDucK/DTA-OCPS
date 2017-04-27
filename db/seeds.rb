@@ -14,8 +14,14 @@ Order.create(status: 0, user: User.first)
 Order.create(status: 0, user: User.first)
 
 Item.destroy_all
-Item.create(name: "test1", unit_price: 5)
-Item.create(name: "test2", unit_price: 10, special_qty: 3, special_price: 25)
+data = JSON.load(open("https://api.myjson.com/bins/gx6vz"))["prices"]
+data.each do |datum|
+  if datum["special_qty"].nil? then
+    Item.create(name: datum["name"], unit_price: datum["unit_price"])
+  else
+    Item.create(name: datum["name"], unit_price: datum["unit_price"], special_qty: datum["special_qty"], special_price: datum["special_price"])
+  end
+end
 
 OrderLine.destroy_all
 OrderLine.create(quantity: 1, order: Order.first, item: Item.first)
