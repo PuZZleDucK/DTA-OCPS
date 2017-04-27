@@ -38,11 +38,11 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to order_url(@order)
   end
 
-  test "should destroy order" do
-    assert_difference('Order.count', -1) do
-      delete order_url(@order)
-    end
-
-    assert_redirected_to orders_url
-  end
+  # test "should destroy order" do
+  #   assert_difference('Order.count', -1) do
+  #     delete order_url(@order)
+  #   end
+  #
+  #   assert_redirected_to orders_url
+  # end
 end
