@@ -8,3 +8,12 @@
 
 User.destroy_all
 User.create(name: "Ben", password: "123", password_confirmation: "123")
+
+Order.destroy_all
+Order.create(status: 0, user: User.first)
+
+Item.destroy_all
+Item.create(name: "test", unit_price: 1)
+
+OrderLine.destroy_all
+OrderLine.create(quantity: 1, order: Order.first, item: Item.first)

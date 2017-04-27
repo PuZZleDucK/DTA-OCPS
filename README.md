@@ -54,11 +54,11 @@ Block - Goal
 - [x] Plan and approach and implement hello world deployment
 - [x] Implement deployment pipeline
 - [x] Implement basic User entities
-- [ ] Implement Items, Orders, Rows - static data
-- [ ] Implement relations - need order line/qty
-- [ ] basic functionality - messy... rewrite? yes!
+- [x] Implement Items, Orders, Rows
+- [x] Implement relations - need order line/qty
+- [ ] basic functionality
 - [ ] Ensure basic functionality of adding multiple items and displaying price
-- [ ] use dynamic json API
+- [ ] use dynamic json API or static data
 
 # Technology decisions
 The limited time for decision making and implementation are my biggest considerations here. I have chosen to develop a Rails based solution as the majority of my recent work with online solutions has been in Rails
