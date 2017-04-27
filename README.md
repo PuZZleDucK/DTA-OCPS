@@ -56,7 +56,7 @@ Block - Goal
 - [x] Implement basic User entities
 - [x] Implement Items, Orders, Rows
 - [x] Implement relations - need order line/qty
-- [ ] basic functionality
+- [x] basic functionality
 - [ ] Ensure basic functionality of adding multiple items and displaying price
 - [ ] use dynamic json API or static data
 
