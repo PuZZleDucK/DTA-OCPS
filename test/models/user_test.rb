@@ -5,6 +5,7 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @a_user = User.new(name: "Ben", password: "123", password_confirmation: "123")
     @invalid_user = User.new(name: " ", password: "123", password_confirmation: "123")
+    @nopassword_user = User.new(name: "nopassword", password: "", password_confirmation: "")
   end
 
   test "valid user" do

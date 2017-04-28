@@ -6,4 +6,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "links" do
+    get new_path
+    assert_select "a[href=?]", root_path
+  end
+
 end

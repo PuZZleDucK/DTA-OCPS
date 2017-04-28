@@ -5,6 +5,11 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     @item = items(:one)
   end
 
+  test "links" do
+    get items_url
+    assert_select "a[href=?]", root_path
+  end
+
   test "should get index" do
     get items_url
     assert_response :success

@@ -26,5 +26,4 @@ end
 OrderLine.destroy_all
 OrderLine.create(quantity: 1, order: Order.first, item: Item.first)
 OrderLine.create(quantity: 1, order: Order.first, item: Item.all[1])
-
 OrderLine.create(quantity: 4, order: Order.all[1], item: Item.all[1])

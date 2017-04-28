@@ -28,6 +28,11 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "links" do
+    get order_url(@order)
+    assert_select "a[href=?]", root_path
+  end
+
   test "should get edit" do
     get edit_order_url(@order)
     assert_response :success

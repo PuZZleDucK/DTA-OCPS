@@ -1,11 +1,6 @@
 require 'test_helper'
 
 class IntegrationTest < ActionDispatch::IntegrationTest
-  test "links" do
-    get root_path
-    assert_select "a[href=?]", root_path
-    assert_select "a[href=?]", new_path
-  end
 
   test "invalid signup" do
     assert_no_difference 'User.count' do
